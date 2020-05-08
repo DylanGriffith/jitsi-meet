@@ -9,7 +9,7 @@ import { BottomSheet, isDialogOpen } from '../../../base/dialog';
 import { getParticipantDisplayName } from '../../../base/participants';
 import { connect } from '../../../base/redux';
 import { StyleType } from '../../../base/styles';
-import { PrivateMessageButton } from '../../../chat';
+import { PrivateMessageButton, ChangeVolumeButton } from '../../../chat';
 
 import { hideRemoteVideoMenu } from '../../actions';
 
@@ -105,6 +105,7 @@ class RemoteVideoMenu extends Component<Props> {
 
         buttons.push(<PinButton { ...buttonProps } />);
         buttons.push(<PrivateMessageButton { ...buttonProps } />);
+        buttons.push(<ChangeVolumeButton { ...buttonProps } />);
 
         return (
             <BottomSheet onCancel = { this._onCancel }>
